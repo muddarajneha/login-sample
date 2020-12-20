@@ -1,0 +1,21 @@
+.panel-heading{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+button{
+    float: right;
+    margin: 5px;
+}
+table, th, td {
+    border: 1px solid black;
+    width: 95%;
+    margin:1%;
+    text-align: center;
+    padding: 5px;
+    background-color:rgba(231, 231, 231, 0.897);
+}
+img{
+width: 80px;
+height: 80px;
+}

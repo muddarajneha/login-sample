@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Register</div>
+            <div class="panel-body">
+                <form class="form-horizontal" #regForm="ngForm" [formGroup]="registerForm">
+                    <div class="form-group">
+						<label for="email" class="col-xs-11 control-label" style="text-align:left">Username</label>
+						<!--username validation check-->
+						<div class="col-xs-12">
+							<input type="text" class="form-control" formControlName="email"
+								placeholder="Enter email id">
+							<div *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty||registerForm.controls.email.touched)"
+								style="color: red;">
+								<div *ngIf="registerForm.controls.email.errors.required">
+									Field is required
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="notickets" class="col-xs-11 control-label" style="text-align:left">Password</label>
+						<div class="col-xs-12">
+							<input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+							<!--password validation check-->
+							<div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty||registerForm.controls.password.touched)"
+								style="color: red;">
+								<div *ngIf="registerForm.controls.password.errors.required">
+									Field is required
+								</div>
+								<div *ngIf="registerForm.controls.password.errors.minlength">
+									Minimum length of password is 6 characters
+								</div>
+							</div>
+						</div>
+                    </div>
+                    
+                    <div class="form-group">
+						<label for="email" class="col-xs-11 control-label" style="text-align:left">First Name</label>
+						<div class="col-xs-12">
+							<input type="text" class="form-control" formControlName="email" placeholder="Enter email id">
+							<!--first name validation check-->
+							<div *ngIf="registerForm.controls.firstName.invalid && (registerForm.controls.firstName.dirty||registerForm.controls.firstName.touched)"
+								style="color: red;">
+								<div *ngIf="registerForm.controls.firstName.errors.required">
+									Field is required
+                                </div>
+                                <div *ngIf="registerForm.controls.password.errors.pattern">
+									First Name shouldn't contain whitespaces
+								</div>
+							</div>
+						</div>
+                    </div>
+
+                    <div class="form-group">
+						<label for="email" class="col-xs-11 control-label" style="text-align:left">Last Name</label>
+						<div class="col-xs-12">
+							<input type="text" class="form-control" formControlName="email" placeholder="Enter email id">
+							<!--last name validation check-->
+							<div *ngIf="registerForm.controls.lastName.invalid && (registerForm.controls.lastName.dirty||registerForm.controls.lastName.touched)"
+								style="color: red;">
+								<div *ngIf="registerForm.controls.lastName.errors.required">
+									Field is required
+                                </div>
+                                <div *ngIf="registerForm.controls.password.errors.pattern">
+									Last Name shouldn't contain whitespaces
+								</div>
+							</div>
+						</div>
+                    </div>
+				</form>
+				<!--form submit-->
+                <div class="form-group">
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-block" value="submit"
+                            (click)="register(registerForm.value)">Register</button>
+                    </div>
+                </div>
+
+                <div *ngIf="errorMessage!=null && !isValid">
+                    <span class="error">{{errorMessage}}</span>
+                </div>
+                <div *ngIf="successMessage!=null && isValid">
+                    <span class="success">{{successMessage}}</span>
+                    <div>
+                        <a routerLink="/login">Click here to Login..!!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

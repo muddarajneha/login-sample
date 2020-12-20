@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: url("./assets/img.jpg") no-repeat fixed center;
+    background-size: cover;
+    height: 100%;
+    font-family: fantasy;
+}

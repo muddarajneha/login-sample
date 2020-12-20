@@ -1,0 +1,23 @@
+.panel{
+    margin: 10% 30%;  
+    background-color:lightgray;
+    border-radius: 20px;
+    opacity: 0.9;
+} 
+.panel-heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.panel-body {
+    padding: 5%;
+}
+p{
+    text-align: center;
+}
+.success{
+    color: green;
+}
+.error{
+    color: red;
+}
